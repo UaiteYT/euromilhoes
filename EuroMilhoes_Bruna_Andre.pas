@@ -36,7 +36,7 @@ Var
   Begin
      ClrScr;
      writeln('Bem-vindo(a), venha ganhar o maior sonho da sua vida!');
-     greetings:='Olá';
+     greetings:='OlÃ¡';
      
      Writeln('Antes de tentar a sua sorte precisava do seu nome ');
      readln(name);
@@ -44,8 +44,8 @@ Var
      clrscr;
      writeln(greetings, ' ', name, ' as regras do jogo sao as seguintes:');
      writeln('');
-     	writeln('Tens de escolher 5 números diferentes e 2 estrelas diferentes ');
-     	writeln('Caso acertes algum dos números sorteados ser-te-á atribuído um prémio monetário ');
+     	writeln('Tens de escolher 5 nÃºmeros diferentes e 2 estrelas diferentes ');
+     	writeln('Caso acertes algum dos nÃºmeros e/ou estrelas sorteados ser-te-Ã¡ atribuÃ­do um prÃ©mio monetÃ¡rio ');
      	writeln('Bom Jogo! ');
      	writeln('');     	                	
      writeln('Clica no Enter para continuares');
@@ -59,22 +59,22 @@ Var
 Begin 
   for i :=1 to 5 do
   Begin
-	 writeln('Digite o ',i,'º nº de 1 a 50: ');
+	 writeln('Digite o ',i,'Âº nÂº de 1 a 50: ');
 	 Readln(num[i]);
 	 
 	 while(num[i]<1)or(num[i]>50) do
 	  Begin
-	      writeln('Nºinválido, Digite outro nºde 1 a 50:');
+	      writeln('NÂºinvÃ¡lido, Digite outro nÂºde 1 a 50:');
 				Readln(num[i]);
 	  End;
 	  for j:=1 to (i-1) do
 		if(num[i]=num[j]) then 
 	Begin 
-	  writeln('Nº repetido digite outro nº 1 a 50');  
+	  writeln('NÂº repetido digite outro nÂº 1 a 50');  
 	  Readln(num[i]);
 	  while(num[i]<1)or(num[i]>50) do
 	  Begin
-	      write('Nºinválido, Digite outro nºde 1 a 50:');
+	      write('NÂºinvÃ¡lido, Digite outro nÂºde 1 a 50:');
 				Readln(num[i]);
 	  End;
 	  j:=0;
@@ -88,11 +88,11 @@ Var
 Begin 
   for i :=1 to 2 do
   Begin
-	 writeln('Escolha a ',i,'º estrela de 1 a 12: '); 
+	 writeln('Escolha a ',i,'Âº estrela de 1 a 12: '); 
 	 Readln(est[i]);
 	 while(est[i]<1)or(est[i]>12) do
 	  Begin
-	      writeln('Estrela inválida, Digite outra estrela de 1 a 12:');
+	      writeln('Estrela invÃ¡lida, Digite outra estrela de 1 a 12:');
 				Readln(est[i]);
 	  End;
 	  for j:=1 to (i-1) do
@@ -102,7 +102,7 @@ Begin
 	  Readln(est[i]);
 	  while(est[i]<1)or(est[i]>12) do
 	  Begin
-	      write('Estrela inválida , Digite outra de 1 a 12 :');
+	      write('Estrela invÃ¡lida , Digite outra de 1 a 12 :');
 				Readln(est[i]);
 	  End;
 	  j:=0;
@@ -125,7 +125,7 @@ End;
    End;
    
    
-//************************Erro de lógica   
+//************************Erro de lÃ³gica   
  Procedure bubble_sort2;  
 Var
   i,j,temp:integer;
@@ -209,7 +209,7 @@ Procedure bubble_sortAleat1;
        End;
    End;
    
-//************************Erro de lógica   
+//************************Erro de lÃ³gica   
  Procedure bubble_sortAleat2;  
 Var
   i,j,temp:integer;
@@ -264,9 +264,9 @@ Procedure Conta_num;
           If(num[i]=numAleat[j])then
             Contanum:=contanum+1;
     if (contaNum=0) then
-    writeln('Má sorte :( nao acertaste em nenhum numero, tente novamente !!')
+    writeln('MÃ¡ sorte :( nao acertaste em nenhum numero, tente novamente !!')
     else
-      writeln('Acertou em ',Contanum , ' numero(s)  Parabéns');
+      writeln('Acertou em ',Contanum , ' numero(s)  ParabÃ©ns');
  End;
    
 Procedure Conta_est;
@@ -279,9 +279,9 @@ Procedure Conta_est;
          If(est[i]=estAleat[j])then
            Contaest:=contaest+1;
     if (contaest=0) then
-      writeln('Nao conseguiste acertar em nenhuma estrela, boa sorte para a próxima !!')
+      writeln('Nao conseguiste acertar em nenhuma estrela, boa sorte para a prÃ³xima !!')
 		else 
-		  writeln('Acertou em ',Contaest ,' estrelas Parabéns');			     
+		  writeln('Acertou em ',Contaest ,' estrelas ParabÃ©ns');			     
  End;
  
 procedure premios;
