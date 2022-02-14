@@ -33,25 +33,41 @@ Var
    choise:char;
    Password,User:String[12];
    i:Byte;                                                                                 
-  Begin
+    Begin
      ClrScr;
-     writeln('Bem-vindo(a), venha ganhar o maior sonho da sua vida!');
-     greetings:='Olá';
+     writeln('olá, venha ganhar o maior sonho da sua vida');
+     greetings:='olá';
+     message:= 'Bom dia';
      
      Writeln('Antes de tentar a sua sorte precisava do seu nome ');
      readln(name);
+     writeln(greetings,name,'espero que a sorte grande esteja consigo');
      
-     clrscr;
-     writeln(greetings, ' ', name, ' as regras do jogo sao as seguintes:');
-     writeln('');
-     	writeln('Tens de escolher 5 números diferentes e 2 estrelas diferentes ');
-     	writeln('Caso acertes algum dos números e/ou estrelas sorteados ser-te-á atribuído um prémio monetário ');
-     	writeln('Bom Jogo! ');
-     	writeln('');     	                	
-     writeln('Clica no Enter para continuares');
-
+        Password:='Sorte';
+        Cont:=0;
+        ClrScr;
+        For i:=1 to 3 do 
+           Begin 
+              write(i:2,'.Insere a password para continuar:');
+              Readln(User);
+              If (User <> Password) Then 
+                Begin
+                   writeln('Acesso Negado !');
+                   Cont:=Cont+1;
+                   If (Cont=3)Then
+                     Begin
+                       writeln('Chegaste ao limite de tentativas!!');
+                       ReadKey;
+                     End;
+                end
+                Else 
+								Begin
+                     writeln('Certo!');
+                     i:=3;
+	              End;
+	          End;
 				         
-	End;	
+	End;
 
 procedure Pede_num;
 Var
