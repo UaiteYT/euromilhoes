@@ -25,48 +25,54 @@ end;
   
 Procedure ola;
 Var 
-   a,b,c,d:integer;
+   a,b,c,d, count:integer;
    greetings:string;
    name:string;
    message: string;
    exit:boolean;
    choise:char;
    Password,User:String[12];
-   i:Byte;                                                                                 
+   i:Byte;                                                                                  
     Begin
      ClrScr;
      writeln('olá, venha ganhar o maior sonho da sua vida');
-     greetings:='olá';
+     greetings:='olá ';
      message:= 'Bom dia';
      
      Writeln('Antes de tentar a sua sorte precisava do seu nome ');
      readln(name);
-     writeln(greetings,name,'espero que a sorte grande esteja consigo');
+      ClrScr;
+     writeln(greetings,'', name,' para poderes jogar é necessário escreveres uma palavra-pass. Sabes qual é? Espero que a sorte grande esteja contigo');
+     ReadLn;
      
         Password:='Sorte';
-        Cont:=0;
-        ClrScr;
-        For i:=1 to 3 do 
-           Begin 
-              write(i:2,'.Insere a password para continuar:');
-              Readln(User);
-              If (User <> Password) Then 
-                Begin
-                   writeln('Acesso Negado !');
-                   Cont:=Cont+1;
-                   If (Cont=3)Then
-                     Begin
-                       writeln('Chegaste ao limite de tentativas!!');
-                       ReadKey;
-                     End;
-                end
-                Else 
-								Begin
-                     writeln('Certo!');
-                     i:=3;
-	              End;
-	          End;
-				         
+     Count:=3;
+     ClrScr; {ClearScreen}
+     For i:=3 DownTo 1 Do
+        Begin
+           Write(i:2,' Tentativas restantes. Insere a password para continuar: ');
+           ReadLn(User);{catch the user password}
+           If (User <> Password) Then {analize it}
+              Begin
+                 WriteLn('Acesso Negado!');                 
+                 Count:=Count-1;
+                 If (Count=0)Then
+                   Begin   {if count reaches 0 then exit}
+                      WriteLn('Chegaste ao limite de tentaivas !');
+                      WriteLn('Confirma se te forneceram a password correta !');
+                      ReadKey;
+                      Halt;
+                   End;
+                 Continue;  {if not good,ask again}
+              End
+           Else Begin
+                   WriteLn('Acesso concedido!');
+                   Break;  {if good breaking loop}
+                End;
+        End;
+     WriteLn('Clica no Enter para continuar');
+     ReadLn;
+				                  
 	End;
 
 procedure Pede_num;
