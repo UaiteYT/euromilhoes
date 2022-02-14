@@ -169,11 +169,11 @@ var i,j:integer;
  begin
   for i:=1 to 5 do
   Begin
-    numAleat[i]:=random(50)+1;
+    numAleat[i]:=random(49)+1;
 	  for j:=1 to (i-1) do
 	  	if(numAleat[i]=numAleat[j]) then  
 	    Begin 
-	      numAleat[i]:=random(50)+1;
+	      numAleat[i]:=random(49)+1;
 	      j:=0;
 	    End; 
 	 End;
@@ -185,11 +185,11 @@ Var
  begin
   for i:=1 to 2 do
   Begin
-	  estAleat[i]:=random(12)+1;
+	  estAleat[i]:=random(11)+1;
 	   for j:=1 to (i-1) do
 		  if(estAleat[i]=estAleat[j]) then 
 	  Begin 
-	   estAleat[i]:=random(12)+1;
+	   estAleat[i]:=random(11)+1;
 	   j:=0;
 	  End; 
 	End;
